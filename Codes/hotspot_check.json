@@ -1,0 +1,13 @@
+{
+  "id": "hotspot_check",
+  "title": "Hotspot Interaction",
+  "description": "Checks if user clicks the correct hotspot area and sets feedback.",
+  "use_case": "Image-based knowledge checks or clickable maps.",
+  "storyline_instructions": "Add as a JavaScript trigger on hotspot click.",
+  "javascript_code": "// Check hotspot click result\nvar spot = GetPlayer().GetVar('ClickedHotspot');\nif(spot === 'CorrectHotspot'){\n  GetPlayer().SetVar('Feedback','Correct area!');\n}else{\n  GetPlayer().SetVar('Feedback','Try again.');\n}",
+  "variables": [
+    {"name": "ClickedHotspot", "description": "Name/value of the hotspot area the user clicked."},
+    {"name": "Feedback", "description": "Feedback for user."}
+  ],
+  "notes": "Update 'CorrectHotspot' to match your correct hotspot's value."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "tabbed_interaction",
+  "title": "Layered Tab Interaction for Process Flow",
+  "description": "Displays different content layers based on selected tab.",
+  "use_case": "Step-by-step process or workflow explainer.",
+  "storyline_instructions": "Add as a JavaScript trigger to each tab button.",
+  "javascript_code": "// Show corresponding layer based on selected tab\nvar selectedTab = GetPlayer().GetVar('TabNumber');\nif(selectedTab === 1){\n  GetPlayer().SetVar('LayerToShow','Step1');\n}else if(selectedTab === 2){\n  GetPlayer().SetVar('LayerToShow','Step2');\n}else if(selectedTab === 3){\n  GetPlayer().SetVar('LayerToShow','Step3');\n}",
+  "variables": [
+    {"name": "TabNumber", "description": "Number or name of the selected tab."},
+    {"name": "LayerToShow", "description": "String to trigger showing a particular layer in Storyline."}
+  ],
+  "notes": "Adjust the logic for the number of tabs and corresponding layer names."
+}

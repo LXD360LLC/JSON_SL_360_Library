@@ -1,0 +1,14 @@
+{
+  "id": "drag_and_drop_basic",
+  "title": "Drag and Drop Basic",
+  "description": "Checks if the dragged item matches the correct target, and sets feedback.",
+  "use_case": "Simple knowledge check using drag and drop.",
+  "storyline_instructions": "Add as a JavaScript trigger on Submit.",
+  "javascript_code": "// Check if the dragged item is correct\nvar correct = GetPlayer().GetVar('DraggedItem') === 'CorrectTarget';\nif(correct){\n  GetPlayer().SetVar('Feedback','Correct!');\n}else{\n  GetPlayer().SetVar('Feedback','Try again.');\n}",
+  "variables": [
+    {"name": "DraggedItem", "description": "Name or value of the dropped item."},
+    {"name": "Feedback", "description": "Text to display as feedback to the learner."}
+  ],
+  "notes": "Update the value 'CorrectTarget' to your target's variable value."
+}
+

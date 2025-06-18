@@ -1,0 +1,13 @@
+{
+  "id": "scenario_branching",
+  "title": "Scenario Branching",
+  "description": "Branches to different Storyline scenes/slides based on user choice.",
+  "use_case": "Decision-making scenarios, branching logic.",
+  "storyline_instructions": "Add as a JavaScript trigger on choice selection.",
+  "javascript_code": "// Branching logic\nvar choice = GetPlayer().GetVar('UserChoice');\nswitch(choice){\n  case 'A':\n    GetPlayer().SetVar('BranchTo','Scene1');\n    break;\n  case 'B':\n    GetPlayer().SetVar('BranchTo','Scene2');\n    break;\n  default:\n    GetPlayer().SetVar('BranchTo','Scene3');\n    break;\n}",
+  "variables": [
+    {"name": "UserChoice", "description": "User's scenario choice (A, B, etc.)"},
+    {"name": "BranchTo", "description": "Set this in Storyline to trigger scene/slide navigation."}
+  ],
+  "notes": "Update the switch cases to match your scenario structure."
+}

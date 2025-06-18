@@ -1,0 +1,13 @@
+{
+  "id": "multiple_choice_feedback",
+  "title": "Multiple Choice Quiz with Feedback",
+  "description": "Gives instant feedback based on user's selected answer.",
+  "use_case": "Any multiple choice question.",
+  "storyline_instructions": "Add as a JavaScript trigger on Submit.",
+  "javascript_code": "// Evaluate selected answer\nvar answer = GetPlayer().GetVar('MCQAnswer');\nif(answer === 'B'){\n  GetPlayer().SetVar('Feedback','That is correct!');\n}else{\n  GetPlayer().SetVar('Feedback','Incorrect. Please review the content.');\n}",
+  "variables": [
+    {"name": "MCQAnswer", "description": "Variable set to user's choice, e.g., 'A', 'B', 'C', 'D'."},
+    {"name": "Feedback", "description": "Variable to display feedback to user."}
+  ],
+  "notes": "Change 'B' to your correct answer's value."
+}

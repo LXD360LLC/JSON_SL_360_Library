@@ -1,0 +1,13 @@
+{
+  "id": "text_entry_validation",
+  "title": "Text Entry Validation",
+  "description": "Validates a text input field and provides feedback.",
+  "use_case": "Fill-in-the-blank, password checks, open text questions.",
+  "storyline_instructions": "Add as a JavaScript trigger on Submit.",
+  "javascript_code": "// Validate user input\nvar userInput = GetPlayer().GetVar('UserText');\nif(userInput.trim().toLowerCase() === 'storyline'){\n  GetPlayer().SetVar('Feedback','Correct!');\n}else{\n  GetPlayer().SetVar('Feedback','Incorrect, try again.');\n}",
+  "variables": [
+    {"name": "UserText", "description": "User's input from the text entry field."},
+    {"name": "Feedback", "description": "Feedback string to display."}
+  ],
+  "notes": "Change 'storyline' to your correct answer if needed."
+}

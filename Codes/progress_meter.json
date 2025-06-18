@@ -1,0 +1,13 @@
+{
+  "id": "progress_meter",
+  "title": "Progress Meter (Visual)",
+  "description": "Updates a progress bar or meter based on completion variables.",
+  "use_case": "Visual progress tracking.",
+  "storyline_instructions": "Add as a JavaScript trigger at each progress checkpoint.",
+  "javascript_code": "// Update progress meter\nvar complete = GetPlayer().GetVar('SectionsCompleted');\nGetPlayer().SetVar('ProgressPercent', complete * 20);",
+  "variables": [
+    {"name": "SectionsCompleted", "description": "Number of completed sections."},
+    {"name": "ProgressPercent", "description": "Percent completion for progress bar."}
+  ],
+  "notes": "Assumes 5 sections (each 20%). Adjust logic as needed."
+}

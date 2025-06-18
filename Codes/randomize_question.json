@@ -1,0 +1,12 @@
+{
+  "id": "randomize_question",
+  "title": "Randomized Quiz Question Selector",
+  "description": "Selects a random question from a list to display.",
+  "use_case": "Pulling random questions for quizzes or scenarios.",
+  "storyline_instructions": "Add as a JavaScript trigger when user starts the quiz.",
+  "javascript_code": "// Randomly pick a question number (1-5)\nvar q = Math.floor(Math.random() * 5) + 1;\nGetPlayer().SetVar('QuestionNumber', q);",
+  "variables": [
+    {"name": "QuestionNumber", "description": "Randomly set question number (1-5)." }
+  ],
+  "notes": "Change '5' to your total number of questions. Use Storyline triggers to show the correct question based on this variable."
+}

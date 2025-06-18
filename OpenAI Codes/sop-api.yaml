@@ -1,0 +1,133 @@
+openapi: 3.1.0
+info:
+  title: LXD360 Document Generator API
+  version: 1.1.0
+  description: API for creating, editing, and retrieving branded company SOPs, Policies, and Procedures.
+
+servers:
+  - url: https://mockapi.lxd360.com
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+
+security:
+  - bearerAuth: []
+
+paths:
+  /sops:
+    post:
+      operationId: createSop
+      summary: Create a new SOP
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SOPDocument'
+      responses:
+        '201':
+          description: SOP created successfully
+
+  /sops/{id}:
+    patch:
+      operationId: updateSop
+      summary: Update an existing SOP by ID
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SOPDocument'
+      responses:
+        '200':
+          description: SOP updated successfully
+        '404':
+          description: SOP not found
+
+  /templates:
+    get:
+      operationId: getTemplates
+      summary: Get sample SOP and policy templates
+      responses:
+        '200':
+          description: List of template examples
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      example: SOP
+                    title:
+                      type: string
+                      example: New Employee Onboarding SOP
+                    id:
+                      type: string
+                      example: template_001
+
+  /feedback:
+    post:
+      operationId: postFeedback
+      summary: Submit feedback or suggestions
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                documentId:
+                  type: string
+                userEmail:
+                  type: string
+                rating:
+                  type: integer
+                  minimum: 1
+                  maximum: 5
+                comments:
+                  type: string
+      responses:
+        '200':
+          description: Feedback received
+
+components:
+  schemas:
+    SOPDocument:
+      type: object
+      properties:
+        sopTitle:
+          type: string
+        objective:
+          type: string
+        responsibleRoles:
+          type: array
+          items:
+            type: string
+        workflow:
+          type: array
+          items:
+            type: object
+            properties:
+              stepNumber:
+                type: integer
+              description:
+                type: string
+              assignedTo:
+                type: string
+      required:
+        - sopTitle
+        - objective
+        - responsibleRoles
+        - workflow

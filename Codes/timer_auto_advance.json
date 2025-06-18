@@ -1,0 +1,12 @@
+{
+  "id": "timer_auto_advance",
+  "title": "Timer-Based Auto-Advance",
+  "description": "Automatically advances the slide after a specified number of seconds.",
+  "use_case": "Timed activities, splash screens.",
+  "storyline_instructions": "Add as a JavaScript trigger at timeline start.",
+  "javascript_code": "// Auto-advance after 5 seconds\nsetTimeout(function(){\n  GetPlayer().SetVar('Advance',true);\n}, 5000);",
+  "variables": [
+    {"name": "Advance", "description": "Boolean variable that triggers slide advance in Storyline when set to true."}
+  ],
+  "notes": "Adjust 5000 to the desired milliseconds (e.g., 10000 for 10 seconds). Configure Storyline trigger: 'When Advance changes, jump to next slide.'"
+}

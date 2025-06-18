@@ -1,0 +1,13 @@
+{
+  "id": "slider_image_compare",
+  "title": "Slider-Controlled Image Comparison",
+  "description": "Shows different images based on slider value (e.g., before/after).",
+  "use_case": "Comparing two states, such as before-and-after.",
+  "storyline_instructions": "Add as a JavaScript trigger when slider variable changes.",
+  "javascript_code": "// Change image based on slider value\nvar val = GetPlayer().GetVar('SliderValue');\nif(val < 5){\n  GetPlayer().SetVar('ImageState','Before');\n}else{\n  GetPlayer().SetVar('ImageState','After');\n}",
+  "variables": [
+    {"name": "SliderValue", "description": "Number from Storyline slider."},
+    {"name": "ImageState", "description": "String to trigger different image states (e.g., 'Before', 'After')."}
+  ],
+  "notes": "Configure Storyline to show images based on ImageState variable."
+}
